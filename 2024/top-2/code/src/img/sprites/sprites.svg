@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ 
+  <symbol id="arrow" viewBox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1 1L6 5L11 1"/>
+  </symbol>
+
+  <symbol id="exit" viewBox="0 0 37 37" xmlns="http://www.w3.org/2000/svg">
+    <rect y="2.12134" width="2" height="48" rx="1" transform="rotate(-45 0 2.12134)"/>
+    <rect width="2" height="48" rx="1" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 36.0625 2.12134)"/>
+  </symbol>
+ 
+</svg>

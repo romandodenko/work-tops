@@ -1,0 +1,71 @@
+// :root {
+//   // Шрифты
+//   --font-main: "NotoSans", sans-serif; // главный шрифт на странице
+//   --font-second: "Sarala", sans-serif; // главный шрифт на странице
+
+//   // Контейнер
+//   --container-width: 1500px; // ширина контейнера
+//   --container-step: 20px; // падинги по бокам на пк
+//   --container-step-tablet: 15px; // падинги по бокам на планшетах
+//   --container-step-mobile: 10px; // падинги по бокам на мобилках
+//   --container: calc(var(--container-width) + (var(--container-step) * 2)); // сам контейнер
+
+//   // Цвета 
+//   --main: #ffffff;
+//   --black: #000000;
+//   --white: #ffffff;
+//   --box-shadow-top-1: 0 0 17px 0 #8f88ff;
+//   --box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.25);
+
+//   --hover: #5830BE; // цвет при ховере
+//   --active: #6B39E8; // цвет при активе
+// }
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--container-step);
+
+  @media (max-width: 374px) {
+    padding: 0 var(--container-step-mobile);
+  }
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-main);
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--main);
+}
+
+main {
+  flex: 1 1 auto;
+  margin-top: -30px;
+  position: relative;
+  z-index: 2;
+
+  &:not(:last-child) {
+    margin-bottom: 40px;
+
+    @media (max-width: 600px) {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+body {
+  top: 0 !important;
+}
