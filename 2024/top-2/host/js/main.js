@@ -325,18 +325,18 @@ if (heroItem) {
     const heroBest = e.querySelector(".hero__best");
 
     if (heroBest) {
-     
-      setTimeout(()=> {
+
+      setTimeout(() => {
         const heroBestStyles = heroBest.getBoundingClientRect();
 
         const heroBestHeight = heroBestStyles.height;
-  
+
         e.querySelector(".hero__subleft").style.paddingTop = heroBestHeight + "px";
-  
+
         e.querySelector(".hero__middle").style.paddingTop = heroBestHeight + "px";
-  
+
         e.querySelector(".hero__right").style.paddingTop = heroBestHeight + "px";
-      },2000)
+      }, 2000)
 
     }
 
@@ -569,7 +569,7 @@ if (headerSlider) {
 } else {
   page.classList.add("no-cube");
 }
-
+ 
 // Светлый / темный вариант
 
 // const pageDark = document.querySelector(".page.dark");
@@ -638,5 +638,49 @@ if (document.body.clientWidth < 992) {
   if (lang && page) {
     page.append(lang);
   }
-} 
+}
+
+// Слайдер payment
+
+const paymentsSlider = document.querySelectorAll(".payments-slider");
+  
+const heroAccord = document.querySelectorAll(".hero__accord");
+
+function sliderInit(classer, index) { 
+  const paymentsSwiper = new Swiper(classer, {
+    observer: true,
+    observeParents: true,
+    watchOverflow: true,
+    slidesPerView: "auto",
+    spaceBetween: 10,
+    direction: 'horizontal',
+    navigation: {
+      nextEl: `.payments-slider-next-${index}`,
+      prevEl: `.payments-slider-prev-${index}`,
+    },
+  });
+}
+
+if(heroAccord) {
+  heroAccord.forEach(function(e, i) { 
+    if(e.querySelector(".payments-slider-prev")) {
+      e.querySelector(".payments-slider-prev").classList.add(`payments-slider-prev-${i}`);
+    }
  
+    if(e.querySelector(".payments-slider-next")) {
+      e.querySelector(".payments-slider-next").classList.add(`payments-slider-next-${i}`);
+    } 
+  })
+}
+ 
+if (document.body.clientWidth > 601) {
+  if (paymentsSlider) {
+    paymentsSlider.forEach(function (e, i) { 
+      sliderInit(e, i);
+    })
+  }
+} else {
+  paymentsSlider.forEach(function(e) {
+    e.querySelector(".swiper-wrapper").classList.add("payments-slider__payments");
+  })
+}

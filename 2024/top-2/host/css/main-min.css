@@ -193,7 +193,7 @@ input[type=number] {
 .page.no-cube .header__container {
   padding-bottom: 125px;
 }
- 
+
 @media (max-width: 600px) {
   .page.no-cube .header__container {
     padding-bottom: 105px;
@@ -445,9 +445,9 @@ body {
 
 @media (max-width:991px) {
   .lang {
-     position: absolute;
-     top: 11px;
-     right: 29px;
+    position: absolute;
+    top: 11px;
+    right: 29px;
   }
 }
 
@@ -1097,8 +1097,8 @@ body {
   -ms-flex-pack: justify;
   justify-content: space-between;
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 225px;
-  flex: 0 0 225px;
+  -ms-flex: 0 0 238px;
+  flex: 0 0 238px;
   width: 100%;
   padding: 16px 16px 16px 0
 }
@@ -1180,17 +1180,68 @@ body {
 }
 
 .hero__accord {
-  width: 100%
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 6px;
 }
 
+.hero__accord-button {
+  width: 12px;
+  height: 18px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.hero__accord-button svg {
+  stroke: #fff;
+  transform: rotate(90deg);
+  -webkit-transition: stroke .3s ease-in-out, opacity .3s ease-in-out;
+  -o-transition: stroke .3s ease-in-out, opacity .3s ease-in-out;
+  transition: stroke .3s ease-in-out, opacity .3s ease-in-out;
+}
+
+.payments-slider-next svg {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.hero__accord-button.swiper-button-disabled {
+  opacity: .5;
+  pointer-events: none;
+}
+ 
 @media (max-width:600px) {
   .hero__accord {
+    display: block;
     height: 0;
     overflow: hidden
   }
+
+  .hero__accord-button {
+    display: none;
+  }
 }
 
-.hero__payments {
+@media (any-hover: hover) {
+  .hero__accord-button svg:hover {
+    stroke: var(--hover);
+  }
+}
+
+.hero__accord-button svg:focus-visible {
+  stroke: var(--hover);
+}
+
+.hero__accord-button svg:active {
+  stroke: var(--hover);
+  -webkit-transition-duration: .1s;
+  -o-transition-duration: .1s;
+  transition-duration: .1s;
+}
+
+.payments-slider__payments {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1206,7 +1257,7 @@ body {
 }
 
 @media (max-width:600px) {
-  .hero__payments {
+  .payments-slider__payments {
     padding-top: 10px;
     gap: 8px
   }
@@ -1231,7 +1282,7 @@ body {
 }
 
 @media (max-width:600px) {
-  .hero__payment { 
+  .hero__payment {
     border-radius: 0 !important;
     padding: 0;
     -webkit-box-flex: 0;
@@ -1259,7 +1310,8 @@ body {
 
 .preload {
   position: fixed;
-  display: flex;
+  /* display: flex; */
+  display: none;
   top: 0;
   left: 0;
   width: 100vw;
@@ -1313,7 +1365,8 @@ body {
   position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  /* display: flex; */
+  display: none;
   top: 0;
   left: 0;
   width: 100vw;
@@ -1687,7 +1740,8 @@ body {
   position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  /* display: flex; */
+  display: none;
   top: 0;
   left: 0;
   width: 100vw;
@@ -1718,7 +1772,7 @@ body {
   overflow: auto;
   max-width: 570px;
   width: 100%;
-  position: relative; 
+  position: relative;
   z-index: 2;
   margin: auto;
   background-position: center;
@@ -1771,10 +1825,10 @@ body {
   z-index: 1
 }
 
-.event-popup__button  {
+.event-popup__button {
   animation-name: pulse;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
   margin: 0 auto;
 }
 
