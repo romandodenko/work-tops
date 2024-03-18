@@ -1310,8 +1310,7 @@ body {
 
 .preload {
   position: fixed;
-  /* display: flex; */
-  display: none;
+  display: flex; 
   top: 0;
   left: 0;
   width: 100vw;
@@ -1365,8 +1364,7 @@ body {
   position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
-  /* display: flex; */
-  display: none;
+  display: flex; 
   top: 0;
   left: 0;
   width: 100vw;
@@ -1740,8 +1738,7 @@ body {
   position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
-  /* display: flex; */
-  display: none;
+  display: flex; 
   top: 0;
   left: 0;
   width: 100vw;
